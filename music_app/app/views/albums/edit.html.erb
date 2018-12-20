@@ -1,0 +1,38 @@
+<h2>Edit Album</h2>
+<form action="<%= album_url %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <%= auth_token %>
+  <table>
+    <tr>
+      <td>Title:</td>
+      <td><input type="text" name="album[title]" value="<%= @album.title %>"></td>
+    </tr>
+    <tr>
+      <td>Band:</td>
+      <td>
+        <select name="album[band_id]">
+          <option value="0"<% " selected" if @album.band_id %>>Select a band...</option>
+          <% bands = Band.all.order(:name) %>
+          <% bands.each do |band| %>
+          <option value="<%= band.id %>"<%= " selected" if band.id == @album.band_id %>><%= band.name %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Year:</td>
+      <td><input type="text" name="album[year]" value="<%= @album.year %>">
+    </tr>
+    <tr>
+      <td>Type:</td>
+      <td>
+        <label for="type_studio"><input type="radio" id="type_studio" name="album[live]" value="false"<%= " checked" if !@album.live %>> Studio</label>
+        <label for="type_live"><input type="radio" id="type_live" name="album[live]" value="true"<%= " checked" if @album.live %>> Live</label>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right"><input type="submit" value="Save Changess"></td>
+    </tr>
+  </table>
+</form>
+<h5><a href="<%= band_url(@album.band_id) %>">Back to Band</a></h5>

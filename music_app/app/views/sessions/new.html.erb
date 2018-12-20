@@ -1,11 +1,21 @@
-<h1>Log In</h1>
+<h2>Log In</h2>
 <form action="<%= session_url %>" METHOD="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="get_email">Email:
-    <input type="text" id="get_email" name="user[email]">
-    </label><br>
-  <label for="get_password">Email:
-    <input type="text" id="get_password" name="user[password]">
-    </label>
-  <input type="submit" value="Log In">
+  <%= auth_token %>
+  <table>
+    <tr>
+      <td>Email: </td>
+      <td><input type="text" id="get_email" name="user[email]"></td>
+    </tr>
+    <tr>
+      <td>Password: </td>
+      <td><input type="password" id="get_password" name="user[password]"></td>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Log In"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><h5>Need to create an account? <a href="<%= new_user_url %>">Sign up</a></h5></td>
+    </tr>
+  </table>
 </form>
+

@@ -1,0 +1,14 @@
+<h2>Enter a New Band</h2>
+<form action="<%= bands_url %>" method="POST">
+  <%= auth_token %>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" name="band[name]"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right"><input type="submit" value="Create Band"></td>
+    </tr>
+  </table>
+</form>
+<h5><a href="<%= bands_url %>">Back to All Bands</a></h5>

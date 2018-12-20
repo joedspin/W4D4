@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render :show
+    redirect_to bands_url
   end
 
   private

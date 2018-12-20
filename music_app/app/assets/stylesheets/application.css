@@ -18,35 +18,69 @@
  body {
    font-family: 'Archivo Narrow ';
    font-size: 14px;
-
-    background-color: lightyellow;
+    background-color: lightcoral;
+    margin-left: 50px;
+    margin-right: 50px;
  }
-h1, h2, h3, h4 {
+
+h1, h2, h3, h4, h5 {
   font-family: 'Playfair Display';
   color: grey;
 }
 h1 {
     font-size: 40px;
-    color: plum;
+    color: cornflowerblue;
     float: left;
     display: inline-block;
-    height: 40px;
+    height: 50px;
     padding: 25px;
+    padding-left: 0;
     margin: 0;
   }
   h2 {
     font-size: 24px;
-    flex: baseline;
   }
   h4 {
-    font-size: 16px;
+    font-size: 12px;
     flex: baseline;
   }
-
-  .user {
-    display: inline-block;
+  h5 {
+    text-align: center;
+    font-size: 14px;
+  }
+.user_block {
+  display: flex;
+  align-items: baseline;
+}
+.user {
+    display: flex;
     float: right;
+    margin-left: 20px;
+    alilgn-items: baseline;
   }
 hr {
   clear: both;
+}
+a :visited, a :hover, a :active, a {
+  color: lightgrey;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+li {
+  color: black; 
+}
+input {
+  background-color: cornflowerblue;
+  color: black;
+  font-size: 14px;
+}
+.errors {
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
 }

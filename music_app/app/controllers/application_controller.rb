@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
-  helper_method :current_user
-  helper_method :logged_in?
+  helper_method :current_user, :logged_in?
 
   private
-  def require_no_user!
-    redirect_to_cats_url if current_url
+  def require_user!
+    redirect_to new_session_url if current_user.nil?
   end
 
   def current_user

@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 <form action="<%= users_url %>" METHOD="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= auth_token %>
   <table>
     <tr>
       <td>Email: </td>
@@ -9,10 +9,12 @@
     <tr>
       <td>Password: </td>
       <td><input type="password" id="get_password" name="user[password]"></td>
-    </td>
     <tr>
       <td>&nbsp;</td>
       <td><input type="submit" value="Create account"></td>
-    </td>
+    </tr>
+     <tr>
+      <td colspan="2"><h5>Already have an account? <a href="<%= new_session_url %>">Log in</a></h5></td>
+    </tr>
   </table>
 </form>

@@ -9,16 +9,22 @@
   </head>
 
   <body>
+
     <h1>Music App</h1>
-    <% if current_user %>
+    <% if logged_in? %>
+      <section class="user_block">
       <h4 class="user">Logged in as <%= current_user.email %>
       <form class="user" action="<%= session_url %>" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <%= auth_token %>
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Logout">
       </form></h4>
+      </section>
     <% end %>
     <hr>
+    <% if flash[:errors] %>
+        <p class="errors"><%= flash[:errors].join(", ") %></p>
+      <% end %>
     <%= yield %>
   </body>
 </html>
